@@ -13,7 +13,8 @@ class TestAddGroup(unittest.TestCase):
 
     def test_add_group(self):
         wd = self.wd
-        wd.get("http://suninjuly.github.io/simple_form_find_task.html")
+        wd.get("http://suninjuly.github.io/find_link_text")
+        wd.find_element_by_link_text("224592").click()      
         wd.find_element_by_name("first_name").click()
         wd.find_element_by_name("first_name").clear()
         wd.find_element_by_name("first_name").send_keys("Иван")
@@ -22,11 +23,11 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("last_name").send_keys("Иванов")
         wd.find_element_by_xpath("/html/body/div[1]/form/div[3]/input").click()
         wd.find_element_by_xpath("/html/body/div[1]/form/div[3]/input").clear()
-        wd.find_element_by_xpath("/html/body/div[1]/form/div[3]/input").send_keys("Иван")
+        wd.find_element_by_xpath("/html/body/div[1]/form/div[3]/input").send_keys("см")
         wd.find_element_by_id("country").click()
         wd.find_element_by_id("country").clear()
-        wd.find_element_by_id("country").send_keys("Иван")
-        wd.find_element_by_id("submit_button").click()
+        wd.find_element_by_id("country").send_keys("ru")
+        wd.find_element_by_xpath("//form/button").click()
         time.sleep(30)
         
 
